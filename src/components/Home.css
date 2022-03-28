@@ -1,0 +1,10 @@
+body, html {
+    height: 100%;
+  }
+  .bg {
+   
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1920px 1280px ;
+  }

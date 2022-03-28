@@ -1,5 +1,5 @@
-
-
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar,Nav,Container} from 'react-bootstrap'
 import {
   BrowserRouter,
@@ -58,6 +58,7 @@ function App() {
      <Route path="/fruit" element={<Fruit/>}/>
 </Routes>
 </div>
+{/* add footer */}
     </div>
     </BrowserRouter>
     
