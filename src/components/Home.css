@@ -2,9 +2,24 @@ body, html {
     height: 100%;
   }
   .bg {
-   
-    height: 100vh;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 1920px 1280px ;
+    background-size: cover ;
+  }
+
+  .centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .header {
+    font-size: 100px;
+    color: rgba(39, 36, 36, 0.884);
+    text-align-last: center;
+    margin: auto;
+
+
   }

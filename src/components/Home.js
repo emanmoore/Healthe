@@ -3,21 +3,25 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import './Home.css';
-import fruitsarrangement from'../images/fruitsarrangement.jpg'
+import pic5 from'../images/pic5.jpg'
+
+
 
 function Home() {
+
+
+
   return (
-    <div className='bg' style={{ backgroundImage: `url(${fruitsarrangement})` }}>
-     <Container fluid>
-  <Row>
-    <Col></Col>
-    <Col></Col>
-    <Col></Col>
-    <Col></Col>
-  </Row>
-</Container>
-      
-    </div>
+    
+
+    
+    <div className='bg centered-content' style={{ backgroundImage: `url(${pic5})` }}>
+     <h1 className='header'>Welcome To Cutie Fruitie</h1>
+
+    
+
+      </div>
+    
   )
 }
 

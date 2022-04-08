@@ -3,7 +3,7 @@ import React from 'react'
 const Water = () => {
   return (
     <div>
-      <h2>This is the water page</h2>
+      <h3>Water Page Comming Soon...</h3>
     </div>
   )
 }
