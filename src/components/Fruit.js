@@ -1,14 +1,27 @@
-import React from 'react'
+import React from 'react';
+import './Fruit.css';
 
 
-function Fruit() {
+
+const Fruit = () => {
+
+  
+
+  
   return (
   
    <>
-   <h1 style={{textAlign: 'center'}}>Fruit Gallery</h1>
-   <h2 style={{textAlign: 'center'}}>Please eat more fruits</h2>
-   </> 
+      <h1 className='Fruitpage'>Fruit Gallery</h1>
+      <h2 className='fruity'>Please eat more fruits</h2>
 
+   </>
+
+
+
+
+
+
+    
    
   )
 }

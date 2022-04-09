@@ -1,19 +1,30 @@
 body, html {
     height: 100%;
+
   }
   .bg {
    
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover ;
+    background-size: cover;
+   
   }
 
   .header {
     font-size: 100px;
     color: white;
     text-align-last: center;
-    margin: auto;
+   }
+
+ .Fruitpage  {
+   text-align: center;
+   margin-top: 100px;
+}
+
+.fruity {
+  text-align: center;
+}
 
 
-  }
+  

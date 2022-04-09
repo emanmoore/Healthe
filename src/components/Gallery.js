@@ -1,9 +1,20 @@
 import React from 'react'
+import Images from './images/pic5.jpg'
+import Images from './images/pic6.jpg'
 
 const Gallery = () => {
-  return (
-    <h3>Gallery</h3>
-  )
-}
+
+  let data = [
+    {
+      id: 5,
+      Images:'pic5',
+
+    }
+
+    
+
+    ]
+ 
+  }
 
 export default Gallery
