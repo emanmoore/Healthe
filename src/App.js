@@ -10,7 +10,6 @@ import {
 
 
 import Home from './components/Home'
-import About  from './components/About'
 import Login  from './components/Login'
 import Water from './components/Water'
 import Track from './components/Track'
@@ -37,7 +36,6 @@ function App() {
     <Nav className="me-auto">
       <Nav.Link as={Link}to="/home">Home</Nav.Link>
       <Nav.Link as={Link}to="/login">Login</Nav.Link>
-      <Nav.Link as={Link} to="/about">About</Nav.Link>
       <Nav.Link as={Link} to="/water">Water</Nav.Link>
       <Nav.Link as={Link} to="/fruit">Fruit</Nav.Link>
       <Nav.Link as={Link} to="/track">Track</Nav.Link>
@@ -50,8 +48,7 @@ function App() {
 <div style={{height:"95vh"}}>
   <Routes>
     <Route path="/home" element={<Home/>}/>
-    <Route path="/about" element={<About/>}/>
-     <Route path="/login" element={<Login/>}/>
+   <Route path="/login" element={<Login/>}/>
      <Route path="/water" element={<Water/>}/>
      <Route path="/track" element={<Track/>}/>
      <Route path="/fruit" element={<Fruit/>}/>
