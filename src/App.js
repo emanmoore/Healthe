@@ -41,8 +41,7 @@ function App() {
       <Nav.Link as={Link} to="/water">Water</Nav.Link>
       <Nav.Link as={Link} to="/fruit">Fruit</Nav.Link>
       <Nav.Link as={Link} to="/track">Track</Nav.Link>
-      <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-    </Nav>
+     </Nav>
     </Container>
   
   </Navbar>
