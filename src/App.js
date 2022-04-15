@@ -10,9 +10,9 @@ import {
 
 
 import Home from './components/Home'
-import  About  from './components/About'
-import  Contact  from './components/Contact'
-import  Login  from './components/Login'
+import About  from './components/About'
+import Contact  from './components/Contact'
+import Login  from './components/Login'
 import Water from './components/Water'
 import Track from './components/Track'
 import Fruit from './components/Fruit'
