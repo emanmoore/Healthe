@@ -1,9 +1,10 @@
-import React from 'react'
+import React  from 'react';
+import './Water.css';
 
 const Water = () => {
   return (
     <div>
-      <h3>Water Page Comming Soon...</h3>
+      <h3 className='water'>Water Tracker</h3>
     </div>
   )
 }

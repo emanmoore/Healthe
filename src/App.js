@@ -10,10 +10,10 @@ import {
 
 
 import Home from './components/Home'
-import Login  from './components/Login'
+import Fruit from './components/Fruit'
 import Water from './components/Water'
 import Track from './components/Track'
-import Fruit from './components/Fruit'
+
 
 
 
@@ -34,11 +34,10 @@ function App() {
     <Container>
     <Navbar.Brand href="#home">Cutie Fruitie</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link as={Link}to="/home">Home</Nav.Link>
-      <Nav.Link as={Link}to="/login">Login</Nav.Link>
-      <Nav.Link as={Link} to="/water">Water</Nav.Link>
-      <Nav.Link as={Link} to="/fruit">Fruit</Nav.Link>
-      <Nav.Link as={Link} to="/track">Track</Nav.Link>
+    <Nav.Link as={Link} to="/home">Home</Nav.Link>
+    <Nav.Link as={Link} to="/fruit">Fruit</Nav.Link>
+     <Nav.Link as={Link} to="/water">Water</Nav.Link>
+     <Nav.Link as={Link} to="/track">Track</Nav.Link>
      </Nav>
     </Container>
   
@@ -48,13 +47,12 @@ function App() {
 <div style={{height:"95vh"}}>
   <Routes>
     <Route path="/home" element={<Home/>}/>
-   <Route path="/login" element={<Login/>}/>
+    <Route path="/fruit" element={<Fruit/>}/>
      <Route path="/water" element={<Water/>}/>
      <Route path="/track" element={<Track/>}/>
-     <Route path="/fruit" element={<Fruit/>}/>
 </Routes>
 </div>
-{/* add footer */}
+
     </div>
     </BrowserRouter>
     
