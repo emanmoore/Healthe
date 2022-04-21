@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import './Home.css';
+import './Home.css'
 import pic5 from'../images/pic5.jpg'
 
 
