@@ -12,14 +12,14 @@ const Wapp = () => {
     {
       title: 'Liters',
       amount: '8',
-      date: 'May 7, 2022'
+      date: 'May 7, 2022',
 
     },
 
     {
       title: 'Cups',
       amount: '8',
-      date: 'May 8, 2022'
+      date: 'May 8, 2022',
 
     },
 
@@ -44,7 +44,7 @@ const Wapp = () => {
     amount={intake[1].amount}
     date={intake[1].date}
     ></WaterPage> 
-    
+
     <WaterPage
     title={intake[2].title}
     amount={intake[2].amount}
