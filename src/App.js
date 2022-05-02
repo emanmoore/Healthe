@@ -13,6 +13,9 @@ import Home from './components/Home'
 import Fruit from './components/Fruit'
 import Water from './components/Water'
 import Track from './components/Track'
+import WaterPage from './components/WaterPage'
+import Wapp from './components/Wapp'
+import WaterForm from './components/WaterForm';
 
 
 
@@ -38,7 +41,10 @@ function App() {
     <Nav.Link as={Link} to="/fruit">Fruit</Nav.Link>
      <Nav.Link as={Link} to="/water">Water</Nav.Link>
      <Nav.Link as={Link} to="/track">Track</Nav.Link>
-     </Nav>
+     <Nav.Link as={Link} to="/waterpage">Water Page</Nav.Link>
+     <Nav.Link as={Link} to="/wapp">Wapp</Nav.Link>
+     <Nav.Link as={Link} to="/waterform">WaterForm</Nav.Link>
+  </Nav>
     </Container>
   
   </Navbar>
@@ -50,6 +56,9 @@ function App() {
     <Route path="/fruit" element={<Fruit/>}/>
      <Route path="/water" element={<Water/>}/>
      <Route path="/track" element={<Track/>}/>
+     <Route path="/waterpage" element={<WaterPage/>}/>
+     <Route path="/Wapp" element={<Wapp/>}/>
+     <Route path="/waterform" element={<WaterForm/>}/>
 </Routes>
 </div>
 
