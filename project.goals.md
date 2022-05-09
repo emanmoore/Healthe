@@ -2,9 +2,8 @@
 
 
     - Home:   {done}
-    - Fruit: {flip card of fruits images}
-    - Water: {flip cards of water images}
+    - Fruit: {scroll card of fruits images}
+    - Water: {scroll cards of water images}
     - Track: {will have two forms: water intake tracking and  fruit intake tracking} [two forms side by side horizontally-> ]
     Water - Page:
-    - Wapp:
-    - WaterForm:
+    
