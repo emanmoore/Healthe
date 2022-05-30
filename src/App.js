@@ -7,9 +7,9 @@ import Home from "./components/Home";
 import Fruit from "./components/Fruit";
 import Water from "./components/Water";
 import Track from "./components/Track";
-import WaterPage from "./components/WaterPage";
-import Wapp from "./components/Wapp";
-import WaterForm from "./components/WaterForm";
+
+
+
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -41,16 +41,7 @@ function App() {
                 <Nav.Link as={Link} to="/track">
                   Track
                 </Nav.Link>
-                <Nav.Link as={Link} to="/waterpage">
-                  Water Page
-                </Nav.Link>
-                <Nav.Link as={Link} to="/wapp">
-                  Wapp
-                </Nav.Link>
-                <Nav.Link as={Link} to="/waterform">
-                  WaterForm
-                </Nav.Link>
-              </Nav>
+                </Nav>
             </Container>
           </Navbar>
         </div>
@@ -60,9 +51,8 @@ function App() {
             <Route path="/fruit" element={<Fruit />} />
             <Route path="/water" element={<Water />} />
             <Route path="/track" element={<Track />} />
-            <Route path="/waterpage" element={<WaterPage />} />
-            <Route path="/Wapp" element={<Wapp />} />
-            <Route path="/waterform" element={<WaterForm />} />
+            
+            
           </Routes>
         </div>
       </div>
