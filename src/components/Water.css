@@ -21,3 +21,13 @@ body, html {
    margin-top: 100px;
 }
 
+.card-with-height {
+  min-height: 930px;
+}
+
+.card img {
+  object-fit: scale-down;
+  width: 100%;
+  height: 100%;
+
+}

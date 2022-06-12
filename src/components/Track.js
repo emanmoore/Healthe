@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import "./Track.css";
 
@@ -37,6 +38,11 @@ const Track = () => {
 
     let { bottles, cups } = event.target.elements;
 
+    axios.post("http://localhost:3001/water" , {
+      cups: parseInt(cups.value),
+      bottles: parseInt(bottles.value)
+    });
+
     setWaterIntake([
       ...waterintakes,
       {
@@ -57,7 +63,12 @@ const Track = () => {
   const handleFruitSubmit = (/**@type Event*/ event) => {
     event.preventDefault();
 
-    alert("fruit working");
+    let { fruit, cups } = event.target.elements;
+
+    axios.post("http://localhost:3001/fruit" , {
+      cups: parseInt(cups.value),
+      fruit: fruit.value
+    });
   };
 
   return (

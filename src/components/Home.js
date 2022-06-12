@@ -21,7 +21,7 @@ const  [password,setpassword] = useState("");
 
     <div className='form-container'>
       <form className='form'>
-      <h1>Login</h1>
+      <h1> Login</h1>
       <input  value={email}type='email' className='input' placeholder='Email'onChange={(e)=>setemail(e.target.value)}/>
       <input value={password}type='password' className='input' placeholder='Password'onChange={(e)=>setpassword(e.target.value)}/>
       <button onClick={ () => alert('Trying to create account with username: ' + email + ' and password: ' + password) }type='submit' className='button'>Login</button> 
