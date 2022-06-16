@@ -1,4 +1,3 @@
-import {screen} from '@testing-library/dom'
 import { render } from "@testing-library/react";
 import Home from "./Home";
 
@@ -10,18 +9,4 @@ import Home from "./Home";
 
     })
 
-       it(" should render div on the page", () => {
-        render(<Home />);
-           const formHeader  = screen.getByText("Login");
-           expect(formHeader).toBeTruthy();
-
-         
-    })
-    it("should not render div", () => {}); 
-
-
-
-
-    })
-
-
+   })    
