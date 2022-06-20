@@ -5,29 +5,49 @@ import "./Track.css";
 
 const Track = () => {
   const [userWaterInput, setUserWaterInput] = useState("");
-  const [waterConsumption, setWaterConsumption] = useState([]);
+
+  const [fruitConsumption, setFruitConsumption] = useState([]);
   const [waterintakes, setWaterIntake] = useState([]);
   const LITERS_PER_BOTTLE = 3;
   const LITERS_PER_CUP = 0.2;
 
-  const addWaterConsumption = (numberCups) => {
-    if (!numberCups) {
-      alert("You must enter a number of cups");
-      return;
-    }
-    const consumptionEvent = {
-      numberOfCups: numberCups,
-      time: new Date(),
-    };
-    const newWaterConsumption = [...waterConsumption];
-    newWaterConsumption.push(consumptionEvent);
-    setWaterConsumption(newWaterConsumption);
-    setUserWaterInput("");
+  const getWaterIntakes = () => {
+    axios
+      .get("http://localhost:3001/water")
+      .then((res) => res.data)
+      .then((waterList) => {
+        const transformedWaterIntakes = waterList.map((water) => {
+          return {
+            cups: water.cups,
+            bottles: water.bottles,
+            cup_liters: parseFloat(water.cups * LITERS_PER_CUP).toFixed(2),
+            bottle_liters: parseFloat(water.bottles * LITERS_PER_BOTTLE).toFixed(2),
+          };
+        });
+
+        setWaterIntake(transformedWaterIntakes);
+      });
+  };
+  const getFruitsIntake = () => {
+    axios
+      .get("http://localhost:3001/fruit")
+      .then((res) => res.data)
+      .then((fruitList) => {
+        const frutsConsumed = fruitList.map((frItem) => {
+          return {
+            cups: frItem.cups,
+            fruit: frItem.fruit,
+          };
+        });
+
+        setFruitConsumption(frutsConsumed);
+      });
   };
 
   useEffect(() => {
-    console.log("waterintake length:", waterintakes.length);
-  }, [waterintakes]);
+    getWaterIntakes();
+    getFruitsIntake();
+  }, []);
 
   const updateUserWaterInput = (e) => {
     setUserWaterInput(e.target.value);
@@ -38,26 +58,13 @@ const Track = () => {
 
     let { bottles, cups } = event.target.elements;
 
-    axios.post("http://localhost:3001/water" , {
+    const data = {
       cups: parseInt(cups.value),
-      bottles: parseInt(bottles.value)
-    });
+      bottles: parseInt(bottles.value),
+      datetime: new Date().toISOString(),
+    };
 
-    setWaterIntake([
-      ...waterintakes,
-      {
-        cups: parseInt(cups.value),
-        bottles: parseInt(bottles.value),
-        cup_liters: parseFloat(parseInt(cups.value) * LITERS_PER_CUP).toFixed(2),
-        bottle_liters: parseInt(bottles.value) * LITERS_PER_BOTTLE,
-      },
-    ]);
-
-    alert(
-      `CUPS ${parseFloat(parseInt(cups.value) * LITERS_PER_CUP).toFixed(2)} liters   Bottles: ${
-        parseInt(bottles.value) * LITERS_PER_BOTTLE
-      } liters`
-    );
+    axios.post("http://localhost:3001/water", data).then(() => getWaterIntakes());
   };
 
   const handleFruitSubmit = (/**@type Event*/ event) => {
@@ -65,10 +72,15 @@ const Track = () => {
 
     let { fruit, cups } = event.target.elements;
 
-    axios.post("http://localhost:3001/fruit" , {
+    fruitConsumption.push();
+
+    const data = {
+      fruit: parseInt(fruit.value),
       cups: parseInt(cups.value),
-      fruit: fruit.value
-    });
+      datetime: new Date().toISOString(),
+    };
+
+    axios.post("http://localhost:3001/fruit", data).then(() => getFruitsIntake());
   };
 
   return (
@@ -115,22 +127,23 @@ const Track = () => {
 
         <label className=" d-flex justify-content-between">
           <span>Fruit</span>
-          <input type="text" name="fruit" />
+          <input type="text" name="fruit" required/>
         </label>
 
         <label className=" d-flex justify-content-between">
           <span> Cups</span>
-          <input name="cups" type="number" alt="number of cups consumed" />
+          <input name="cups" type="number" alt="number of cups consumed" required min={0}/>
         </label>
 
         <button type="submit" value="eat" className="btn btn-primary">
           Eat
         </button>
-
         <ul>
           <h3>Past fruit consumption</h3>
-          {waterConsumption.map((consumptionEvent) => (
-            <li>cups: {consumptionEvent.numberOfCups}</li>
+          {fruitConsumption.map((consumptionEvent, index) => (
+            <li key={index}>
+              {index + 1} - Cups: {consumptionEvent.cups} Fruit: {consumptionEvent.fruit}
+            </li>
           ))}
         </ul>
       </form>

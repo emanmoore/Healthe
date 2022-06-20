@@ -16,7 +16,6 @@ describe("<Track />", () =>  {
 
    it("It should display fruit amount on track page", async () => {
     render(<Track />)
-   
     //Click button
     fireEvent.click(screen.getByText('Eat'))
     const items = screen.findByLabelText("btn btn-primary")
